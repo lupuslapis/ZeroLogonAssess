@@ -40,8 +40,13 @@ $allDCs | ForEach-Object {
         $DCObj.Compliance = $true
     }
 
-    $enforced = Invoke-Command -ComputerName $DC  {
+    # Invoke-Command will fail on localhost
+    if ([System.Net.Dns]::GetHostByName(($env:computerName)).HostName -eq $DC) {
+        $enforced = Get-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters' -Name FullSecureChannelProtection -ErrorAction SilentlyContinue
+    } else {
+        $enforced = Invoke-Command -ComputerName $DC  {
             Get-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters' -Name FullSecureChannelProtection -ErrorAction SilentlyContinue
+        }
     }
 
     if ($enforced -and $enforced.FullSecureChannelProtection -eq 1) { 
