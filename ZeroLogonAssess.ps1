@@ -16,7 +16,7 @@ $allDCs = $((Get-ADForest).Domains | ForEach-Object { Get-ADDomainController -Fi
 
 # Currently available cumulative updates containing patches
 $hotfixList = @("KB4571729", "KB4571719", "KB4571736", "KB4571702", "KB4571703", "KB4571723", "KB4571694", "KB4565349", "KB4565351", "KB4566782", "KB4577051", "KB4577038", "KB4577066", `
- "KB4577015","KB4577069", "KB4574727", "KB4577062", "KB4571744", "KB4571756", "KB4571748", "KB4570333")
+ "KB4577015","KB4577069", "KB4574727", "KB4577062", "KB4571744", "KB4571756", "KB4571748", "KB4570333", "KB4577069")
 
 $allDCs | ForEach-Object {
 
