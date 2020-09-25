@@ -6,7 +6,7 @@ Script will:
 - Scan for relevant installed updated
 - Check for enforcement registry keys
 
-This is loosely based on (CISA Validation script)[https://github.com/cisagov/cyber.dhs.gov/tree/master/assets/report/ed-20-04_script]. Unfortunately whilst attempting to (fix bugged output)[https://github.com/cisagov/cyber.dhs.gov/issues/163] I came to the view that the existing code's workflow of appending to a csv file and reading it back just needed to be rewritten.
+This is loosely based on [CISA Validation script](https://github.com/cisagov/cyber.dhs.gov/tree/master/assets/report/ed-20-04_script). Unfortunately whilst attempting to [fix bugged output](https://github.com/cisagov/cyber.dhs.gov/issues/163) I came to the view that the existing code's workflow of appending to a csv file and reading it back just needed to be rewritten.
 
 In the process I added a scan for the enforcement key.
 
